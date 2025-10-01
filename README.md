@@ -1,0 +1,1 @@
+# reconocimientoDeFiguras_redNeuronal_hopfield
