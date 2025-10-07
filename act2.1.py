@@ -63,13 +63,19 @@ def recogn_pattern(pattern, pattern1, n):
 
 
 def main():
-    pattern1 = [ [1,1],[1,0] ]
-    pattern2 = [ [0,0],[0,1] ]
-
+    doc1 = open("muestras/muestra1.txt", "r")
+    pattern1 = [list(map(int, line.rstrip('\n'))) for line in doc1.readlines()]
+    print (pattern1)
     pattern1 = reshape(pattern1)
-    pattern2 = reshape(pattern2)
     n1 = len(pattern1)
-    n2 = len(pattern2) 
+
+
+    doc2 = open("muestras/muestra4.txt", "r")
+    pattern2 = [list(map(int, line.rstrip('\n'))) for line in doc2.readlines()]
+    print (pattern2)
+    pattern2 = reshape(pattern2)
+    n2 = len(pattern2)
+
 
     pattern1 = replace_zeros(pattern1,n1)
     pattern2 = replace_zeros(pattern2,n2)
@@ -84,7 +90,10 @@ def main():
     recogn_pattern (pattern, pattern1, n1)
     recogn_pattern (pattern, pattern2, n1)
 
-    pattern3 = [-1,-1,-1,-1]
+    doc3 = open("muestras/randomPattern.txt", "r")
+    pattern3 = [list(map(int, line.rstrip('\n'))) for line in doc3.readlines()]
+    pattern3 = reshape(pattern3)
+    
     recogn_pattern (pattern, pattern3, n1)
 
    
